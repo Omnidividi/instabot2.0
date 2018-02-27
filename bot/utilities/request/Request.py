@@ -5,11 +5,12 @@ import requests
 
 class Request:
 
-	headers = {
-		"bot": config().get("bot_account_id"),
-		'CONTENT_TYPE': 'application/json',
-		'Accept': 'application/json',
-	}
+	def headers(self):
+		return {
+			"bot": config().get("bot_account_id"),
+			'CONTENT_TYPE': 'application/json',
+			'Accept': 'application/json',
+		}
 
 	def fullUrl(self, url):
 		return constants.base_website + url
@@ -23,7 +24,7 @@ class Request:
 		# define the body of the POST request
 		data = data
 		# send the POST request
-		response = requests.post(fullUrl, params=params, data=data, headers=self.headers, json=json)
+		response = requests.post(fullUrl, params=params, data=data, headers=self.headers(), json=json)
 		print(response.status_code)
 		if response.status_code != 200:
 			self.logFailure(response)
@@ -37,7 +38,7 @@ class Request:
 		# define your URL params
 		params = params
 		# send the GET request
-		response = requests.get(fullUrl, params=params, headers=self.headers)
+		response = requests.get(fullUrl, params=params, headers=self.headers())
 		print(response.status_code)
 		if response.status_code != 200:
 			self.logFailure(fullUrl, response)

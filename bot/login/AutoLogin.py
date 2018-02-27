@@ -8,8 +8,12 @@ class AutoLogin:
 
 	def login(self):
 		self.navigateToLoginPage()
-		sleep(2)
-		self.fillInForm()
+		sleep(5)
+		if "accounts/login/" in self.browser.current_url:
+			print("needs to login")
+			self.fillInForm()
+		else:
+			print("does not need to login")
 
 	def navigateToLoginPage(self):
 		self.browser.get("https://www.instagram.com/accounts/login/")

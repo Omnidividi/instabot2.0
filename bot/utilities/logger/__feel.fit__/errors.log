@@ -1,0 +1,24 @@
+ERROR:root:
+ --------------------------------- 
+NoneType: None
+ERROR:root:should post true
+NoneType: None
+ERROR:root:
+ --------------------------------- 
+NoneType: None
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:52967/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "proxy": {"proxyType": "manual", "ftpProxy": "23.244.234.240:3128", "httpProxy": "23.244.234.240:3128", "sslProxy": "23.244.234.240:3128"}, "goog:chromeOptions": {"mobileEmulation": {"deviceName": "iPhone 7"}, "extensions": [], "args": ["--no-sandbox", "--disable-setuid-sandbox", "--disable-extensions", "--no-sandbox", "user-data-dir=/Users/leonhardsoenke/Coding/python/instabot2.0/bot/utilities/sessions/__feel.fit__/"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "proxy": {"proxyType": "MANUAL", "ftpProxy": "23.244.234.240:3128", "httpProxy": "23.244.234.240:3128", "sslProxy": "23.244.234.240:3128"}, "goog:chromeOptions": {"mobileEmulation": {"deviceName": "iPhone 7"}, "extensions": [], "args": ["--no-sandbox", "--disable-setuid-sandbox", "--disable-extensions", "--no-sandbox", "user-data-dir=/Users/leonhardsoenke/Coding/python/instabot2.0/bot/utilities/sessions/__feel.fit__/"]}}}
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:DELETE http://127.0.0.1:52967/session/98721a69154a5f122f6579dab533e510 {"sessionId": "98721a69154a5f122f6579dab533e510"}
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): london-pt.co.uk
+DEBUG:urllib3.connectionpool:http://london-pt.co.uk:80 "GET /post/backlog/amount HTTP/1.1" 200 None
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:52996/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "proxy": {"proxyType": "manual", "ftpProxy": "104.227.64.25:3128", "httpProxy": "104.227.64.25:3128", "sslProxy": "104.227.64.25:3128"}, "goog:chromeOptions": {"mobileEmulation": {"deviceName": "iPhone 7"}, "extensions": [], "args": ["--no-sandbox", "--disable-setuid-sandbox", "--disable-extensions", "--no-sandbox", "user-data-dir=/Users/leonhardsoenke/Coding/python/instabot2.0/bot/utilities/sessions/pureluxuriouslife/"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "proxy": {"proxyType": "MANUAL", "ftpProxy": "104.227.64.25:3128", "httpProxy": "104.227.64.25:3128", "sslProxy": "104.227.64.25:3128"}, "goog:chromeOptions": {"mobileEmulation": {"deviceName": "iPhone 7"}, "extensions": [], "args": ["--no-sandbox", "--disable-setuid-sandbox", "--disable-extensions", "--no-sandbox", "user-data-dir=/Users/leonhardsoenke/Coding/python/instabot2.0/bot/utilities/sessions/pureluxuriouslife/"]}}}
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:DELETE http://127.0.0.1:52996/session/421659a0800976d892ba00520fb8987f {"sessionId": "421659a0800976d892ba00520fb8987f"}
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): london-pt.co.uk
+DEBUG:urllib3.connectionpool:http://london-pt.co.uk:80 "GET /post/backlog/amount HTTP/1.1" 200 None
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:53025/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "proxy": {"proxyType": "manual", "ftpProxy": "107.183.119.114:3128", "httpProxy": "107.183.119.114:3128", "sslProxy": "107.183.119.114:3128"}, "goog:chromeOptions": {"mobileEmulation": {"deviceName": "iPhone 7"}, "extensions": [], "args": ["--no-sandbox", "--disable-setuid-sandbox", "--disable-extensions", "--no-sandbox", "user-data-dir=/Users/leonhardsoenke/Coding/python/instabot2.0/bot/utilities/sessions/worldwanderguide/"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "proxy": {"proxyType": "MANUAL", "ftpProxy": "107.183.119.114:3128", "httpProxy": "107.183.119.114:3128", "sslProxy": "107.183.119.114:3128"}, "goog:chromeOptions": {"mobileEmulation": {"deviceName": "iPhone 7"}, "extensions": [], "args": ["--no-sandbox", "--disable-setuid-sandbox", "--disable-extensions", "--no-sandbox", "user-data-dir=/Users/leonhardsoenke/Coding/python/instabot2.0/bot/utilities/sessions/worldwanderguide/"]}}}
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:DELETE http://127.0.0.1:53025/session/8474504746b76e91d74851cbbc04fae2 {"sessionId": "8474504746b76e91d74851cbbc04fae2"}
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request

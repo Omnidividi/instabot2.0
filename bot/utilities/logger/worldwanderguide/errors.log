@@ -1,0 +1,26 @@
+ERROR:root:
+ --------------------------------- 
+NoneType: None
+ERROR:root:should post true
+NoneType: None
+ERROR:root:
+ --------------------------------- 
+NoneType: None
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): london-pt.co.uk
+DEBUG:urllib3.connectionpool:http://london-pt.co.uk:80 "GET /report/daily-report/fetch HTTP/1.1" 200 None
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): london-pt.co.uk
+DEBUG:urllib3.connectionpool:http://london-pt.co.uk:80 "GET /post/fetch HTTP/1.1" 200 None
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:53478/session/1c07a7d4804653196433265dcc52ae7c/url {"url": "https://instagram.com", "sessionId": "1c07a7d4804653196433265dcc52ae7c"}
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:53478/session/1c07a7d4804653196433265dcc52ae7c/element {"using": "css selector", "value": "div._k0d2z._ttgfw._mdf8w", "sessionId": "1c07a7d4804653196433265dcc52ae7c"}
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:53478/session/1c07a7d4804653196433265dcc52ae7c/element/0.2049828735313639-1/click {"id": "0.2049828735313639-1", "sessionId": "1c07a7d4804653196433265dcc52ae7c"}
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:53478/session/1c07a7d4804653196433265dcc52ae7c/element {"using": "css selector", "value": "nav._68u16._evlcw", "sessionId": "1c07a7d4804653196433265dcc52ae7c"}
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:53478/session/1c07a7d4804653196433265dcc52ae7c/element/0.2049828735313639-2/element {"using": "css selector", "value": "input._l8al6", "id": "0.2049828735313639-2", "sessionId": "1c07a7d4804653196433265dcc52ae7c"}
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:53478/session/1c07a7d4804653196433265dcc52ae7c/element/0.2049828735313639-3/value {"text": "/Users/leonhardsoenke/Coding/python/instabot2.0/bot/scrape/ScrapedImages/worldwanderguide/BfgNswFn6Im.jpg", "value": ["/", "U", "s", "e", "r", "s", "/", "l", "e", "o", "n", "h", "a", "r", "d", "s", "o", "e", "n", "k", "e", "/", "C", "o", "d", "i", "n", "g", "/", "p", "y", "t", "h", "o", "n", "/", "i", "n", "s", "t", "a", "b", "o", "t", "2", ".", "0", "/", "b", "o", "t", "/", "s", "c", "r", "a", "p", "e", "/", "S", "c", "r", "a", "p", "e", "d", "I", "m", "a", "g", "e", "s", "/", "w", "o", "r", "l", "d", "w", "a", "n", "d", "e", "r", "g", "u", "i", "d", "e", "/", "B", "f", "g", "N", "s", "w", "F", "n", "6", "I", "m", ".", "j", "p", "g"], "id": "0.2049828735313639-3", "sessionId": "1c07a7d4804653196433265dcc52ae7c"}
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:DELETE http://127.0.0.1:53478/session/1c07a7d4804653196433265dcc52ae7c {"sessionId": "1c07a7d4804653196433265dcc52ae7c"}
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request

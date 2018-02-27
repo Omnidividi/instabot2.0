@@ -1,0 +1,6 @@
+[2766:775:0227/134158.475326:ERROR:CONSOLE(8)] "Uncaught TypeError: Cannot read property '1' of null", source: https://www.google.com/_/chrome/newtab?ie=UTF-8 (8)
+[2766:775:0227/134235.822365:INFO:chrome_cryptauth_service.cc(233)] Profile is not authenticated yet; waiting before starting CryptAuth managers.
+[2766:44547:0227/134235.874408:WARNING:spdy_session.cc(2887)] Received WINDOW_UPDATE for invalid stream 3
+[2766:44547:0227/134235.893131:WARNING:spdy_session.cc(2887)] Received WINDOW_UPDATE for invalid stream 39
+[2766:44547:0227/134235.895521:WARNING:spdy_session.cc(2938)] Received HEADERS for invalid stream 39
+[2766:44547:0227/134235.922472:WARNING:spdy_session.cc(2938)] Received HEADERS for invalid stream 3

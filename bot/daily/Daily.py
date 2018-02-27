@@ -17,8 +17,14 @@ class Daily:
 
 	def dailyReport(self):
 		self.browser.get("https://www.instagram.com/" + config().get("instagram_username") + "/")
-		followerCount = self.browser.find_element_by_css_selector("a[href*='followers'] span").text
-		followingCount = self.browser.find_element_by_css_selector("a[href*='following'] span").text
+		followerAndFollowingCount = self.browser.find_element_by_css_selector("ul._h9luf li span._fd86t")
+		followerCount = followerAndFollowingCount[1].text.replace(",","")
+		followingCount = followerAndFollowingCount[2].text.replace(",","")
+
+		# followerCount = self.browser.find_element_by_css_selector("a[href*='followers'] span").text.replace(",","")
+		# followingCount = self.browser.find_element_by_css_selector("a[href*='following'] span").text.replace(",","")
+		print(followerCount)
+		print(followingCount)
 
 		Request().post("/report/follower-count", {"followerCount": followerCount, "followingCount": followingCount})
 

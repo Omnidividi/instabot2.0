@@ -4397,3 +4397,16 @@ DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): london-pt.co.uk
 DEBUG:urllib3.connectionpool:http://london-pt.co.uk:80 "POST /report/daily-report/increase?followed=9 HTTP/1.1" 200 None
 DEBUG:selenium.webdriver.remote.remote_connection:DELETE http://127.0.0.1:61893/session/a39681a9e72ece327c8cf685b997a955/window {"sessionId": "a39681a9e72ece327c8cf685b997a955"}
 DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+ERROR:root:
+ --------------------------------- 
+NoneType: None
+ERROR:root:Running bot 2018-02-24 18:31:30.283079 ******************************
+NoneType: None
+ERROR:root:
+ --------------------------------- 
+NoneType: None
+DEBUG:urllib3.connectionpool:Starting new HTTP connection (1): london-pt.co.uk
+DEBUG:urllib3.connectionpool:http://london-pt.co.uk:80 "GET /post/backlog/amount HTTP/1.1" 200 None
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:58561/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "platformName": "any", "goog:chromeOptions": {"mobileEmulation": {"deviceName": "iPhone 7"}, "extensions": [], "args": ["--no-sandbox", "--disable-setuid-sandbox", "--disable-extensions", "--no-sandbox"]}}}, "desiredCapabilities": {"browserName": "chrome", "version": "", "platform": "ANY", "goog:chromeOptions": {"mobileEmulation": {"deviceName": "iPhone 7"}, "extensions": [], "args": ["--no-sandbox", "--disable-setuid-sandbox", "--disable-extensions", "--no-sandbox"]}}}
+DEBUG:selenium.webdriver.remote.remote_connection:Finished Request
+DEBUG:selenium.webdriver.remote.remote_connection:POST http://127.0.0.1:58561/session/2c870cd77355f0d0ca626c56bb139540/url {"url": "https://www.instagram.com/accounts/login/", "sessionId": "2c870cd77355f0d0ca626c56bb139540"}

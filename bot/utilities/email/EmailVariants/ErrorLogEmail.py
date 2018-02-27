@@ -1,5 +1,4 @@
 from bot.config.config import config
-from bot.constants import constants
 import datetime
 
 class ErrorLogEmail:
@@ -22,4 +21,4 @@ class ErrorLogEmail:
 
 	def generateAttachment(self):
 		self.attachmentName = "error.txt"
-		self.attachment = constants.log_path
+		self.attachment = config().getConstant("log_path")

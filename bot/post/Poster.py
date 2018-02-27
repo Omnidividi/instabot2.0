@@ -37,6 +37,8 @@ class Poster:
 	def uploadPost(self, imagePath, caption):
 		self.browser.get("https://instagram.com")
 
+		sleep(10)
+
 		addImageButton = self.browser.find_element_by_css_selector("div._k0d2z._ttgfw._mdf8w")
 		addImageButton.click()
 

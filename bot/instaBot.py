@@ -13,19 +13,23 @@ from bot.utilities.request.Request import Request
 from bot.engagement.ActionsOnHomepage import ActionsOnHomepage
 from bot.follow.FollowExceptions import FollowExceptions
 from bot.constants import constants
+from selenium.webdriver.common.proxy import Proxy
 import datetime
+import os
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
+
+
 
 class instaBot:
 
 	def __init__(self, account):
-		print("running this first")
 		config().setConfig(account)
 		print(config().get("bot_account_id"))
 		self.browser = None
 		self.dailyVars = DailyVars()
-		print("starting up")
-		print(datetime.datetime.now())
-		MyLogger().log("Running bot {} ******************************".format(datetime.datetime.now()))
 
 	def instantiateBrowser(self):
 
@@ -39,26 +43,39 @@ class instaBot:
 			chrome_options.add_argument('--disable-extensions')
 			chrome_options.add_argument('--no-sandbox')
 
+			path = config().getConstant("session_path")
+			chrome_options.add_argument("user-data-dir={}".format(path))
+
 			if constants.headless:
 				chrome_options.add_argument('--headless')
 				chrome_options.add_argument('--disable-gpu')  # Last I checked this was necessary.
 
 
+			capabilities = DesiredCapabilities.CHROME
 			if config().get("use_proxy"):
-				myProxy = config().get("proxy")
-
-				proxy = Proxy({
-					'proxyType': ProxyType.MANUAL,
-					'httpProxy': myProxy,
-					'ftpProxy': myProxy,
-					'sslProxy': myProxy,
-				})
-				self.browser = webdriver.Chrome(chrome_options=chrome_options, proxy=proxy)
+				print("using proxy")
+				proxy_address = config().get("proxy_address")
+				proxy = Proxy()
+				proxy.socksPassword = config().get("proxy_password")
+				proxy.socksUsername = config().get("proxy_username")
+				proxy.ftpProxy = proxy_address
+				proxy.httpProxy = proxy_address
+				proxy.sslProxy = proxy_address
+				proxy.proxy_type = {'ff_value': 1, 'string': 'MANUAL'}
+				proxy.add_to_capabilities(capabilities)
+				
 			else:
+				capabilities.pop('proxy', None)
+			
+			self.browser = webdriver.Chrome(chrome_options=chrome_options,desired_capabilities=capabilities)
 
-				self.browser = webdriver.Chrome(chrome_options=chrome_options)
+			if True: ## checking ip address
+				print(capabilities)
+				# print("screenshot")
+				# self.browser.get("https://whatismyipaddress.com/")
+				# self.browser.save_screenshot(config().get("bot_account_id") + ".png")
 
-			print("chrome started")
+
 			AutoLogin(self.browser).login()
 
 
@@ -67,7 +84,6 @@ class instaBot:
 		return postBacklogAmount < config().get("post_backlog")
 
 	def run(self):
-		print(self.dailyVars.vars)
 
 		if self.scrapingIncomplete():
 			self.instantiateBrowser()
@@ -90,7 +106,6 @@ class instaBot:
 			self.instantiateBrowser()
 			followManager = FollowManager(self.browser)
 			followManager.unfollow()
-
 		# if self.dailyVars.should("like"):
 		# 	self.instantiateBrowser()
 		# 	actionsOnHomepage = ActionsOnHomepage(self.browser)
@@ -103,9 +118,6 @@ class instaBot:
 			poster = Poster(self.browser)
 			poster.run()
 
-		sleep(5)
-		if self.browser != None:
-			self.browser.close()
 
 		return
 
@@ -120,7 +132,25 @@ class instaBot:
 		# do comments
 
 	def dailyWrapUp(self):
-		self.instantiateBrowser()
+		chrome_options = webdriver.ChromeOptions()
+		chrome_options.add_argument('--no-sandbox')
+		chrome_options.add_argument("--disable-setuid-sandbox")
+		chrome_options.add_argument('--disable-extensions')
+		chrome_options.add_argument('--no-sandbox')
+
+		if constants.headless:
+			chrome_options.add_argument('--headless')
+			chrome_options.add_argument('--disable-gpu')  # Last I checked this was necessary.
+
+
+		capabilities = DesiredCapabilities.CHROME
+		if "procxy" != capabilities:
+			capabilities.pop('proxy', None)
+		
+		print(capabilities)
+		self.browser = webdriver.Chrome(chrome_options=chrome_options,desired_capabilities=capabilities)
+
+			
 		dailyHandler = Daily(self.browser)
 		# # send email to self with information about scraped posts, post backlog and post evaluation
 		dailyHandler.evaluatePosts()
@@ -131,8 +161,6 @@ class instaBot:
 		# delete all images that have been posted or disapproved to save space
 		dailyHandler.cleanOutScrapedImages()
 
-		sleep(5)
-		self.browser.close()
 		return
 
 

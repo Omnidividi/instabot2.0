@@ -18,6 +18,7 @@ class UserScraper:
 
 
 		try:
+			print("trying to scrape from: {}".format(randomUsername))
 			self.fetchRandomPostObject(randomUsername).scrape()
 		except ScrapeExceptions.NotEnoughPostsFoundForThisSearchCriteria as e:
 			# if not enough posts were found then just skip this user

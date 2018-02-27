@@ -8,12 +8,14 @@ import os
 
 class DailyVars:
 
-	filePath = os.path.dirname(os.path.abspath(__file__)) + "/vars.pkl"
+	def filePath(self):
+		return config().getConstant("daily_vars_path")
 
 	def __init__(self):
 		try:
 			self.vars = self.load_obj()
 		except (OSError, IOError) as e:
+			print("error 1")
 			self.generateNewVars()
 			self.vars = self.load_obj()
 
@@ -26,11 +28,23 @@ class DailyVars:
 		return datetime.datetime.today().strftime('%Y-%m-%d')
 
 	def save_obj(self, obj):
-	    with open(self.filePath, 'wb') as f:
-	        pickle.dump(obj, f, pickle.HIGHEST_PROTOCOL)
+		directoryPath = self.filePath().replace("/dailyVars.pkl","")
+
+		if not os.path.exists(directoryPath):
+			os.makedirs(directoryPath)
+
+		try:
+			file = open(self.filePath(), 'wb')
+		except OSError:
+			file = open(self.filePath(), 'w')
+			
+		pickle.dump(obj, file, pickle.HIGHEST_PROTOCOL)
+
+		# with open(self.filePath(), 'wb') as f:
+		# 	pickle.dump(obj, f, pickle.HIGHEST_PROTOCOL)
 
 	def load_obj(self):
-	    with open(self.filePath, 'rb') as f:
+	    with open(self.filePath(), 'rb') as f:
 	        return pickle.load(f)
 
 	def generateNewVars(self):

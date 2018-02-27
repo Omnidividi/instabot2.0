@@ -15,11 +15,14 @@ class Caption:
 
 	def genericComponent(self):
 		# find a way to return generic phrases like "beautiful"
-		return "via"
+		return ""
 
 	def creditComponent(self):
 		userPostWasScrapedFrom = self.record["owner_username"]
-		return "@" + userPostWasScrapedFrom
+		if config().get("caption_give_credit"):
+			return "via @" + userPostWasScrapedFrom
+		else:
+			return ""
 
 	def hashtagComponent(self):
 		hashtags = config().get("post_hashtag")
